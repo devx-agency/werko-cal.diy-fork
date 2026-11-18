@@ -31,7 +31,7 @@ services:
       CALDIY_DB_PASSWORD: ${CALDIY_DB_PASSWORD:?nastav CALDIY_DB_PASSWORD v .env.dev}
       AUTHENTIK_DB_PASSWORD: ${AUTHENTIK_DB_PASSWORD:?nastav AUTHENTIK_DB_PASSWORD v .env.dev}
     ports:
-      - "127.0.0.1:${POSTGRES_HOST_PORT:-5432}:5432"
+      - "127.0.0.1:${POSTGRES_HOST_PORT:-5433}:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./docker/postgres/init:/docker-entrypoint-initdb.d:ro

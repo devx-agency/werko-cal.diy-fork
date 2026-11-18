@@ -5,7 +5,7 @@ Cal.diy samotné běží na hostiteli přes `yarn dev`.
 
 | Služba | Adresa (jen localhost) |
 |---|---|
-| PostgreSQL | `127.0.0.1:5432` (DB `calendiy` a `authentik`) |
+| PostgreSQL | `127.0.0.1:5433` (DB `calendiy` a `authentik`) |
 | Redis | `127.0.0.1:6379` |
 | Authentik | http://localhost:9000 |
 | Mailpit UI / SMTP | http://localhost:8025 / `127.0.0.1:1025` |
@@ -120,8 +120,8 @@ Discovery samo neobsahuje uživatelské claimy. Při dokončené OIDC integraci 
 Názvy proměnných ověř proti `.env.example` v repozitáři Cal.diy.
 
 ```env
-DATABASE_URL=postgresql://calendiy:<CALDIY_DB_PASSWORD>@localhost:5432/calendiy
-DATABASE_DIRECT_URL=postgresql://calendiy:<CALDIY_DB_PASSWORD>@localhost:5432/calendiy
+DATABASE_URL=postgresql://calendiy:<CALDIY_DB_PASSWORD>@localhost:5433/calendiy
+DATABASE_DIRECT_URL=postgresql://calendiy:<CALDIY_DB_PASSWORD>@localhost:5433/calendiy
 REDIS_URL=redis://:<REDIS_PASSWORD>@localhost:6379
 EMAIL_FROM=noreply@calendiy.localhost
 EMAIL_SERVER_HOST=127.0.0.1
