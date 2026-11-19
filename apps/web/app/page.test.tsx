@@ -35,6 +35,11 @@ vi.mock("app/_lib/getPublicEventCatalog", () => ({
   getPublicEventCatalog: vi.fn(),
 }));
 
+vi.mock("next/font/google", () => {
+  const font = () => ({ className: "", variable: "", style: { fontFamily: "" } });
+  return { Archivo: font, Archivo_Narrow: font };
+});
+
 vi.mock("app/_utils", () => ({
   getTranslate: vi.fn(),
 }));
@@ -82,7 +87,10 @@ describe("HomePage", () => {
 
     render(await HomePage());
 
-    expect(screen.getByRole("link", { name: "Bookings" })).toHaveAttribute("href", "/bookings/upcoming");
+    expect(screen.getByRole("link", { name: "Sign out" })).toHaveAttribute(
+      "href",
+      "/api/authentik-logout?callbackUrl=%2F"
+    );
     expect(getPublicEventCatalog).toHaveBeenCalled();
   });
 
